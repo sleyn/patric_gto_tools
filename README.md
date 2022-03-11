@@ -13,7 +13,7 @@ The repository provides lightweight scripts for converting GTO format to:
 
 ## Scripts
 
-Scripts are written on Perl and Python.
+Scripts are written on Perl and Python. **Located in the `./scripts` folder**.
 
 The Perl scrips require **JSON** library. It could be installed with CPAN (The Comprehensive Perl Archive Network): [https://metacpan.org/pod/JSON](https://metacpan.org/pod/JSON).
 
