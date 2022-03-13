@@ -2,6 +2,11 @@
 use strict;
 use JSON qw( decode_json );
 
+my $outdir = "gff";                                                                                                                                                                                                                         
+unless(-e $outdir or mkdir($outdir)){
+    die "Cannot make $outdir\n";
+}
+
 my @gto = glob("$ARGV[0]/*.gto");
 
 foreach my $file ( @gto ){

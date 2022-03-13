@@ -2,6 +2,7 @@ import json
 import argparse
 from glob import glob
 from os import path
+from os import mkdir
 
 def feature_to_dict(feature_in, contigs_dict):
     feature_id = feature_in['id']
@@ -26,10 +27,14 @@ parser.add_argument('-g', '--gto', help='Directory with GTO files')
 parser.add_argument('-o', '--output', default='fnn', help='Output directory for FNN files')
 args = parser.parse_args()
 
+# create output directory
+if not path.exists(args.output):
+    mkdir(args.output)
+
 gto_files = glob(path.join(args.gto, '*.gto'))
 
 for gto_f in gto_files:
-    out_name = path.basename('gto_f').replace('.gto', '')
+    out_name = path.basename(gto_f).replace('.gto', '')
     gto = ''
     
     with open(gto_f, 'r') as gto_file:
