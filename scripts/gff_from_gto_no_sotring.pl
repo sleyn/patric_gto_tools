@@ -42,7 +42,7 @@ foreach my $file ( @gto ){
         print GFF "##sequence-region	$cont\t1\t" . length($contigs{$cont}) . "\n";
         
         for( my $j = 0; $j < scalar @{$f_by_c{$cont}}; $j++){
-            if($decoded->{'features'}[$f_by_c{$cont}[$j]]{'type'} eq 'peg' ){               #collect only CDS
+            # if($decoded->{'features'}[$f_by_c{$cont}[$j]]{'type'} eq 'peg' ){               #collect only CDS
                 print GFF "$cont\t";
                 print GFF "mcSEED\t";
                 print GFF "CDS\t";
@@ -60,7 +60,7 @@ foreach my $file ( @gto ){
                     print GFF "product=Hypothetical protein";
                 }
                 print GFF "\n";
-            }#else{
+            # }else{
              #   print $decoded->{'features'}[$f_by_c{$cont}[$j]]{'type'}. "\n";
             #}
             

@@ -43,7 +43,7 @@ foreach my $file ( @gto ){
         
         my %features = ();          # features hash for sorting purposes
         for( my $j = 0; $j < scalar @{$f_by_c{$cont}}; $j++){
-            if($decoded->{'features'}[$f_by_c{$cont}[$j]]{'type'} eq 'peg' ){               #collect only CDS
+            # if($decoded->{'features'}[$f_by_c{$cont}[$j]]{'type'} eq 'peg' ){               #collect only CDS
                 my $pos = 0;        # fosition of feature
                 if( $decoded->{'features'}[$f_by_c{$cont}[$j]]{'location'}[0][2] eq "+" ){  #if the gene is on the forward strand write start first
                     $pos = $decoded->{'features'}[$f_by_c{$cont}[$j]]{'location'}[0][1];
@@ -71,7 +71,7 @@ foreach my $file ( @gto ){
                     $features{$pos} .= "product=Hypothetical protein";
                 }
                 $features{$pos} .= "\n";
-            }   
+            # }   
         }
         
         foreach my $pos ( sort {$a <=> $b} keys %features){         #sort features by positions
